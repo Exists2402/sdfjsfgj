@@ -38,7 +38,7 @@
                       , r = i(111)
                       , o = i(28)
                       , l = i(874);
-                      globalThis.moderators = ["Big_fih", "Igor", "THEGOAT", "Igormain", "Realnick13"];
+                      globalThis.moderators = ["Big_Fih", "Igor", "THEGOAT", "Igormain"];
                     function d(t) {
                         const e = [];
                         if (s.A.mobTable?.length > 0) {
@@ -150,7 +150,7 @@
                             }
                             break;
                         case a.LX.MAZE:
-                            s.A.maxMobs = 64 + 32
+                            s.A.maxMobs = 64 + 16 * s.A.clients.size
                         }
                         if (!s.A.isWaves && s.A.livingMobCount < s.A.maxMobs)
                             if (s.A.gamemode === a.LX.MAZE) {
@@ -163,9 +163,8 @@
                                 let newrarity = Math.min(6, e.rarity);
                                 if (difficulty > 55) {
                                     if (newrarity === 6) {
-                                        newrarity += Math.random() >= 0.995 ? 1 : 0
+                                        newrarity += Math.random() >= 0.998 ? 1 : 0
                                     }
-                                    if (newrarity == 7) newrarity += Math.random() >= 0.9 ? 2 : 0
                                 }
                                 else if (difficulty > 45) {
                                     newrarity = Math.max(newrarity, 5)
@@ -4661,7 +4660,7 @@
                 size: 1,
                 runs: !0,
                 nullCollision: !0
-            }).addDrop(h("Faster")).addDrop(h("Web"), .5).addDrop(h("Third Eye"), .001, 5), new s.XE("Beetle",30,10,30,3).setAggressive(1).addDrop(h("Beetle Egg"), 4), new s.XE("Leafbug",35,3.5,30,2.5).setNeutral(1).setDamageReduction(.13).addDrop(h("Leaf")).addDrop(h("Bone"), .5).addDrop(h("Cactus"), .25), new s.XE("Roach",30,5,30,5.5).setNeutral(1).addDrop(h("Antennae"), 1, 2).addDrop(h("Magnolia"), .6).addDrop(h("Bone"), .6), new s.XE("Hornet",35,15,30,3).setAggressive(1).setProjectile({
+            }).addDrop(h("Faster")).addDrop(h("Web"), .5).addDrop(h("Third Eye"), .001, 5), new s.XE("Beetle",30,10,30,3).setAggressive(1).addDrop(h("Beetle Egg"), 2), new s.XE("Leafbug",35,3.5,30,2.5).setNeutral(1).setDamageReduction(.13).addDrop(h("Leaf")).addDrop(h("Bone"), .5).addDrop(h("Cactus"), .25), new s.XE("Roach",30,5,30,5.5).setNeutral(1).addDrop(h("Antennae"), 1, 2).addDrop(h("Magnolia"), .6).addDrop(h("Bone"), .6), new s.XE("Hornet",35,15,30,3).setAggressive(1).setProjectile({
                 petalIndex: h("Missile"),
                 cooldown: 45,
                 health: 4,
@@ -5117,10 +5116,10 @@
                             rarity: 3 * Math.random() | 0
                         };
                     const i = e[Math.floor(Math.random() * e.length)];
-                    let a, n = 0, r = i.size + 256, o = !1, l = 0;
+                    let a, n = 0, r = i.size + 512, o = !1, l = 0;
                     do {
                         const e = Math.random() * Math.PI * 2
-                          , s = r + 1024 * Math.random();
+                          , s = r + 2048 * Math.random();
                         a = {
                             x: i.x + Math.cos(e) * s,
                             y: i.y + Math.sin(e) * s
